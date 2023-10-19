@@ -4,22 +4,14 @@ import { options } from '../constans/apiConstans'
 import { useDispatch } from 'react-redux'
 import { actionTypes } from '../redux/actions/ActionsTypes'
 import Hero from '../components/Hero'
+import { getMovies, setLoading } from '../redux/actions/actions'
 
 
 const MainPage = () => {
     const dispatch = useDispatch()
     useEffect(()=> {
-
-
-        axios.get("https://api.themoviedb.org/3/movie/popular",options)
-        .then((response) => 
-            dispatch({
-                type:actionTypes.SET_MOVIES,
-                payload: response.data.results
-
-            })
-        )
-        .catch(err => console.log(err))
+        dispatch(setLoading(true))
+       dispatch(getMovies())
     },[])
   return (
     <div>
