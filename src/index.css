@@ -16,6 +16,7 @@ body {
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424 !important;
+
 }
 
 h1 {
@@ -40,6 +41,11 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+.vote {
+  right:25px;
+  bottom: 25px ;
+  padding: 5px 20px;
 }
 
 @media (prefers-color-scheme: light) {
