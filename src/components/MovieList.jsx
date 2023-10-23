@@ -16,9 +16,10 @@ const MovieList = ({ genre }) => {
       .then((response) => setMovies(response.data.results));
   }, []);
 
+ 
   return (
     <div>
-        <h1 className="fs-1 mb-3 mt-3">{genre.name}</h1>
+        <h1 className="fs-1 mb-3 mt-3 ms-5">{genre.name}</h1>
       <Splide
       options={{
         gap:'10px',
@@ -28,9 +29,10 @@ const MovieList = ({ genre }) => {
       aria-label="My Favorite Images">
       {movies?.map((movie)=>(
        <Link to={`/movie/${movie.id}`}>
-          <SplideSlide>
+          <SplideSlide className="m-3 position-relative ">
           <img className="movie"
            src={baseImageURL.concat(movie.poster_path)} alt="Image 1" />
+           <span className="movie-vote"> {movie.vote_average}</span>
         </SplideSlide>
        </Link>
       ))}

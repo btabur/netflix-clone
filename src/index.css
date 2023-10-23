@@ -51,11 +51,21 @@ button:focus-visible {
 .movie {
   max-width: 300px;
   transition: all 0.3s;
-  
-
+  border-radius: 10px;
 }
+
 .movie:hover {
   scale: 1.1;
+}
+
+.movie-vote {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 6px 20px;
+  background-color: yellow;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0,7);
 }
 
 @media (prefers-color-scheme: light) {
