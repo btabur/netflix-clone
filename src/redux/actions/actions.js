@@ -33,3 +33,13 @@ export const getMovies = () => {
         .catch(err => console.log(err))
     }
 }
+
+//filimler için kategorisi çekme
+
+export const getGenres = ()=>(dispatch)=> {
+    axios.get('/genre/movie/list?language=tr',options)
+    .then ((response) => dispatch({
+        type:actionTypes.SET_CATEGORİES,
+        payload: response.data.genres
+    }))
+}
